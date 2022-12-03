@@ -14,17 +14,11 @@
 
     {% for cat in cats %}
         <div class="card text-center">
-            <div class="card-header">
-              Featured
-            </div>
             <div class="card-body">
               <h5 class="card-title">{{ cat.name }}</h5>
               <p class="card-text">{{ cat.description }}</p>
               <p class="card-text"> Breed: {{ cat.breed }}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-            <div class="card-footer text-muted">
-              Age: {{ cat.age }}
+              <a href="/cats/{{ cat.id }}" class="btn btn-primary">View {{ cat.name }}</a>
             </div>
         </div>    
     {% endfor %}
