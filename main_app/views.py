@@ -58,7 +58,7 @@ def cats_show(request, cat_id):
 
 def profile(request, username):
     user = User.objects.get(username=username)
-    cats = list(Cat.onjects.filter(user=user))
+    cats = list(Cat.objects.filter(user=user))
 
     return render(request, 'profile.html', { 'username': username, 'cats':cats })
 
@@ -81,3 +81,7 @@ def login_view(request):
     else: # it was a get request so send the emtpy login form
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
