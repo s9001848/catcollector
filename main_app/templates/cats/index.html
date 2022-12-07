@@ -5,9 +5,10 @@
     <div class="card text-center">
         <div class="card-body">
             <h5 class="card-title">{{ cat.name }}</h5>
-            <p class="card-text">{{ cat.description }}</p>
-            <p class="card-text"> Breed: {{ cat.breed }}</p>
             <a href="/cats/{{ cat.id }}" class="btn btn-primary">View {{ cat.name }}</a>
+            <p>Adopted By: 
+                <a href="/user/{{ cat.user.username }}">{{ cat.user.username }}</a>
+            </p>
         </div>
     </div>    
     {% endfor %}
